@@ -405,26 +405,7 @@ These items are planned research directions, not claims that the corresponding f
 
 **License status: To be confirmed.**
 
-A repository license should be selected and added only after reviewing the project's ownership, distribution requirements, and the licenses of incorporated code, models, and datasets.
-
-Until a license is added, do not assume that the repository is freely reusable, modifiable, or redistributable.
-
-Third-party components, including the object detector, machine-learning libraries, pretrained weights, and datasets, may have separate licensing and usage requirements. Users should review the applicable terms before redistributing or using them commercially.
-
-## 13. Contributions and Reproducibility
-
-Contributions that improve implementation clarity, testing, documentation, and reproducibility are welcome.
-
-When making changes:
-
-1. Explain the purpose of the change.
-2. Keep training and inference preprocessing consistent.
-3. Include relevant tests or validation steps.
-4. Record the configuration and artifacts used for evaluation.
-5. Distinguish measured results from estimates and planned functionality.
-6. Document any hardware-specific assumptions.
-
-## 14. Acknowledgements
+## 13. Acknowledgements
 
 This project brings together object detection, spiking neural computation, and FPGA-oriented engineering to explore alternative approaches to traffic monitoring.
 
