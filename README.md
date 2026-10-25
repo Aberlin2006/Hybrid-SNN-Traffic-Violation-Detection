@@ -102,9 +102,7 @@ The configured SNN ROI input is **48 × 48 × 3**, representing a resized RGB im
 
 The number of scalar channel values is:
 
-\[
-48 \times 48 \times 3 = 6,912
-\]
+**48 × 48 × 3 = 6,912 input channel values**
 
 These values form the image-derived input representation before any additional feature preparation or encoding.
 
@@ -116,11 +114,8 @@ TTFS encoding represents input information using the timing of the first spike r
 
 Conceptually, an input feature is mapped to a spike time:
 
-\[
-t_i = f(x_i)
-\]
-
-where \(x_i\) is an input feature and \(t_i\) is its encoded spike time. The actual mapping function, normalization, time window, and handling of inactive inputs depend on the implementation.
+**Encoded spike time:** `t_i = f(x_i)`
+where (x_i) is an input feature and (t_i) is its encoded spike time. The actual mapping function, normalization, time window, and handling of inactive inputs depend on the implementation.
 
 In the current configuration, the SNN uses **8 simulation time steps**.
 
@@ -128,25 +123,24 @@ TTFS is investigated because temporal spike representations can support event-ba
 
 ### 4.4 Leaky Integrate-and-Fire neurons
 
-### LIF Neuron Model
-
-A Leaky Integrate-and-Fire (LIF) neuron accumulates incoming synaptic current while gradually losing its stored membrane potential through leakage. When the membrane potential reaches the firing threshold, the neuron generates a spike.
+A LIF neuron accumulates incoming synaptic current while gradually losing its stored membrane potential through leakage. When the membrane potential reaches the firing threshold, the neuron generates a spike.
 
 The discrete-time membrane potential update is:
 
-$$
-V[t] = \alpha V[t-1](1-S[t-1]) + I[t]
-$$
+**V[t] = α × V[t−1] × (1 − S[t−1]) + I[t]**
 
 where:
 
-- \(V[t]\) is the membrane potential at time step \(t\).
-- \(\alpha\) is the leak factor.
-- \(S[t-1]\) is the spike output from the previous time step.
-- \(I[t]\) is the incoming synaptic current.
-- The factor \((1-S[t-1])\) implements a reset after the previous time step's spike.
+- `V[t]` is the membrane potential at the current time step.
+- `α` is the leak factor.
+- `S[t−1]` is the spike output from the previous time step.
+- `I[t]` is the incoming synaptic current.
+- `(1 − S[t−1])` represents the reset mechanism after a spike.
 
-The configured leak factor is \(\alpha = 0.75\), and the firing threshold is \(1.0\).
+The configured leak factor is **α = 0.75**, and the firing threshold is **1.0**.
+
+The exact reset behavior should match the LIF implementation in the source code.
+
 
 
 ### 4.5 Dense SNN architecture
