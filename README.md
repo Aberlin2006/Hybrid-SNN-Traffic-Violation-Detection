@@ -128,27 +128,26 @@ TTFS is investigated because temporal spike representations can support event-ba
 
 ### 4.4 Leaky Integrate-and-Fire neurons
 
-The LIF neuron is the basic spiking unit used in the configured SNN.
+### LIF Neuron Model
 
-Its membrane potential integrates incoming synaptic input while gradually losing accumulated potential through leakage. When the potential reaches the threshold, the neuron fires a spike.
+A Leaky Integrate-and-Fire (LIF) neuron accumulates incoming synaptic current while gradually losing its stored membrane potential through leakage. When the membrane potential reaches the firing threshold, the neuron generates a spike.
 
-A simplified discrete-time model is:
+The discrete-time membrane potential update is:
 
-\[
+$$
 V[t] = \alpha V[t-1](1-S[t-1]) + I[t]
-\]
+$$
 
 where:
 
 - \(V[t]\) is the membrane potential at time step \(t\).
 - \(\alpha\) is the leak factor.
-- \(S[t-1]\) is the previous spike output.
+- \(S[t-1]\) is the spike output from the previous time step.
 - \(I[t]\) is the incoming synaptic current.
-- The reset term models the removal of the previous membrane potential after a spike.
+- The factor \((1-S[t-1])\) implements a reset after the previous time step's spike.
 
-The configured leak factor is \(\alpha = 0.75\), and the firing threshold is 1.0.
+The configured leak factor is \(\alpha = 0.75\), and the firing threshold is \(1.0\).
 
-The exact reset behavior and numerical representation must match the implementation used during training and inference.
 
 ### 4.5 Dense SNN architecture
 
