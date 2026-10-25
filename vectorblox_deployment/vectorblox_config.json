@@ -1,0 +1,40 @@
+{
+  "hardware_target": "Microchip_PolarFire_SoC_MPFS250",
+  "board": "MPFS250-VIDEO-KIT",
+  "corevectorblox_ip": {
+    "version": "V1000",
+    "clock_frequency_mhz": 100.0,
+    "system_bus": "AXI4_32BIT",
+    "axi_master_data_width": 32,
+    "axi_master_id_width": 4,
+    "axi_address_width": 38,
+    "vector_lanes": 32,
+    "scratchpad_lsram_kbytes": 128,
+    "burst_length_bytes": 128,
+    "memory_alignment_bytes": 64
+  },
+  "resource_allocation": {
+    "target_fpga_die": "MPFS250T-FCVG484E",
+    "allocated_lsram_blocks": 90,
+    "total_lsram_blocks": 252,
+    "allocated_dsp_blocks": 280,
+    "total_dsp_blocks": 784,
+    "logic_elements_budget": 12500,
+    "target_tdp_watts": 4.8
+  },
+  "memory_map": {
+    "ddr_cached_base": "0x80000000",
+    "ddr_noncached_base": "0xC0000000",
+    "axi_dma_buffer_base": "0x88000000",
+    "snn_bram_mapped_base": "0x70000000",
+    "snn_control_reg_base": "0x70040000"
+  },
+  "compiler_optimizations": {
+    "quantization": "INT8_SYMMETRIC",
+    "per_channel_quantization": true,
+    "zero_skipping": true,
+    "layer_fusion": true,
+    "activation_folding": true,
+    "dma_double_buffering": true
+  }
+}

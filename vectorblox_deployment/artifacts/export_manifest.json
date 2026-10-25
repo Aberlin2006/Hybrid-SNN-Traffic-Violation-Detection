@@ -1,0 +1,9 @@
+{
+  "binary_weights": "C:\\Users\\Hariharan\\.gemini\\antigravity\\scratch\\AO.SNN\\vectorblox_deployment\\artifacts\\snn_weights_q4_4.bin",
+  "w1_hex": "C:\\Users\\Hariharan\\.gemini\\antigravity\\scratch\\AO.SNN\\vectorblox_deployment\\artifacts\\w1_q4_4.hex",
+  "w2_hex": "C:\\Users\\Hariharan\\.gemini\\antigravity\\scratch\\AO.SNN\\vectorblox_deployment\\artifacts\\w2_q4_4.hex",
+  "onnx_model": "C:\\Users\\Hariharan\\.gemini\\antigravity\\scratch\\AO.SNN\\vectorblox_deployment\\artifacts\\snn_junction_q4_4.onnx",
+  "onnx_status": "Exported Successfully",
+  "total_weight_bytes": 443008,
+  "lsram_utilization_percent": 0.6867063492063492
+}
